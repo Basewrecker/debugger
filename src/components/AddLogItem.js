@@ -31,8 +31,8 @@ const AddLogItem = ({ addItem }) => {
             <Col>
               <Form.Control
                 placeholder="user"
-                value={text}
-                onChange={(e) => setText(e.target.value)}
+                value={user}
+                onChange={(e) => setUser(e.target.value)}
               />
             </Col>
             <Col>
@@ -50,7 +50,7 @@ const AddLogItem = ({ addItem }) => {
           </Row>
           <Row className="my-3">
             <Col>
-              <Button type="submit" variant="secondary" block>
+              <Button type="submit" variant="secondary" block="true">
                 Save Log
               </Button>
             </Col>

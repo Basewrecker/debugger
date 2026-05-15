@@ -47,4 +47,15 @@ module.exports = {
     chunks: false,
     modules: false,
   },
+  resolve: {
+    extensions: [".js", ".jsx"],
+    fallback: {
+      crypto: false,
+      net: false,
+      tls: false,
+      dns: false,
+      fs: false,
+      path: false,
+    },
+  },
 };
