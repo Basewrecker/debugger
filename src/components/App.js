@@ -7,22 +7,7 @@ import AddLogItem from "./AddLogItem";
 import { ipcRenderer } from "electron";
 
 const App = () => {
-  const [logs, setLogs] = useState([
-    {
-      _id: 1,
-      priority: "High",
-      text: "App crashed on login",
-      user: "rubair",
-      created: "2026-05-14",
-    },
-    {
-      _id: 2,
-      priority: "Low",
-      text: "Button misaligned",
-      user: "rubair",
-      created: "2026-05-15",
-    },
-  ]);
+  const [logs, setLogs] = useState([]);
 
   const [alert, setAlert] = useState({
     show: false,
@@ -32,6 +17,7 @@ const App = () => {
 
   useEffect(() => {
     ipcRenderer.send("logs:load");
+    ipcRenderer.on("logs:get", (e, logs) => {});
   }, []);
 
   function addItem(item) {
